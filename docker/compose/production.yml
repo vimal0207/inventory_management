@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    stdin_open: true
+    tty: true
+
+  nginx:
+    ports:
+      - "80:80"
+
