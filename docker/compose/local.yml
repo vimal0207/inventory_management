@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+
+  app:
+    stdin_open: true
+    tty: true
+    networks:
+      - default
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: inventory_management_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    restart: always
+    networks:
+      - default
+    ports:
+      - "5436:5432"
+
+  nginx:
+    ports:
+      - "8000:80"
+
+volumes:
+  postgres_data:

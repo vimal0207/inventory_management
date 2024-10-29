@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: inventory_management_app
+    container_name: inventory_management_app
+    restart: always
+    command: bash -c "/app/runserver.sh"
+    volumes:
+      - .:/app
+      - static_root:/app/static
+      - media_root:/app/media
+    env_file:
+      - ./.env
+    stdin_open: true
+    tty: true
+
+  nginx:
+    build:
+      context: ./docker/nginx
+    image: inventory_management_nginx
+    container_name: inventory_management_nginx
+    volumes:
+      - static_root:/app/static
+      - media_root:/app/media
+      - /var/log/nginx/:/var/log/nginx/
+    depends_on:
+      - app
+
+volumes:
+  static_root:
+  media_root:
