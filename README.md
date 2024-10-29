@@ -127,3 +127,14 @@ This page provides a user-friendly interface for exploring the available API end
 By using Swagger, you can efficiently manage and document your API, making it easier for developers and users to understand and utilize your Inventory Management System.
 
 
+## Creating a Superuser
+
+To access the Django admin panel and manage the inventory system, you'll need to create a superuser account. Follow these steps:
+
+1. **Open a Terminal**: Make sure you are in the project directory where your `docker-compose.yml` file is located.
+
+2. **Run the Django Shell**: Use the following command to access the Django shell inside your Docker container:
+
+   ```bash
+   docker-compose exec inventory_management_app python manage.py createsuperuser
+
