@@ -40,7 +40,7 @@ To get started with the Inventory Management System, first clone the repository 
 ```bash
 git clone https://github.com/vimal0207/inventory_management.git
 cd inventory_management
-
+```
 ### Create and Configure the `.env` File
 
 1. **Create the `.env` File**: In the root directory of your cloned repository, create a file named `.env`.
@@ -62,7 +62,7 @@ cd inventory_management
    POSTGRES_PASSWORD="postgres"
    POSTGRES_HOST="db"
    POSTGRES_PORT=5432
-
+   ```
 ## Creating a docker build
 
 To simplify your Docker setup and use the local Docker Compose configuration, you can create a symbolic link to the `local.yml` file. Follow these steps:
@@ -103,7 +103,7 @@ To run the build for your Inventory Management System, follow these steps:
 
    ```bash
    docker-compose up
-
+```
 ## API Documentation
 
 This project uses **Swagger** to generate API documentation for easy reference and testing.
@@ -137,4 +137,4 @@ To access the Django admin panel and manage the inventory system, you'll need to
 
    ```bash
    docker-compose exec inventory_management_app python manage.py createsuperuser
-
+```
