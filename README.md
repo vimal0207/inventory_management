@@ -137,4 +137,3 @@ To access the Django admin panel and manage the inventory system, you'll need to
 
    ```bash
    docker-compose exec inventory_management_app python manage.py createsuperuser
-```
